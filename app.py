@@ -21,5 +21,5 @@ if __name__ == '__main__':
  
     # run() method of Flask class runs the application 
     # on the local development server.
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=8080)
+    http_server = WSGIServer(('', 5000), app)
+    http_server.serve_forever()
